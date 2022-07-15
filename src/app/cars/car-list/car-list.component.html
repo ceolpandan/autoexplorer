@@ -1,19 +1,17 @@
-<div id="car-list">
-    <app-car-list-item *ngFor="let car of carsForPaginate" [info]="car"></app-car-list-item>
-</div>
-<div>
+<div class="container">
     <div class="row">
-        <div class="col-sm-10">
+        <div class="col-sm-12">
             <p-paginator 
             [rows]="12" 
             [totalRecords]="this.cars.length"
             (onPageChange)="paginate($event)"></p-paginator>
         </div>
-        <div class="col-sm-2">
-            <button type="button" class="btn btn-success" routerLink="/new">+ New Car</button>
-        </div>
 
     </div>
 
 </div>
+<div id="car-list">
+    <app-car-list-item *ngFor="let car of carsForPaginate" [info]="car"></app-car-list-item>
+</div>
+
 

@@ -11,3 +11,7 @@ a{
 #side-nav{
     margin-bottom: 30px;
 }
+
+*{
+    overflow: hidden;
+}

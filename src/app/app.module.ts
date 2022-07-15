@@ -18,6 +18,8 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule, } from 'primeng/card';
 import {PaginatorModule} from 'primeng/paginator';
 import {InputTextModule} from 'primeng/inputtext';
+import { ChipModule } from 'primeng/chip';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -25,7 +27,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'cars', component: CarsComponent},
-  {path: 'new', component: CarAddNewComponent},
   {path: 'contact', component: ContactComponent}
 ];
 
@@ -48,6 +49,7 @@ const routes: Routes = [
     HttpClientModule,
     PaginatorModule,
     ReactiveFormsModule,
+    ChipModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

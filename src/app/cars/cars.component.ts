@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarModel } from './car-list/car-list-item/car-item.model';
 
 @Component({
   selector: 'app-cars',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  constructor() { }
+  addedCars: CarModel[] = [];
+
+  isVisible = false;
+
+  constructor() {}
 
   ngOnInit(): void {
   }
 
+  onToggle(){
+    this.isVisible = !this.isVisible;
+  }
+
+  onAddCar(event){
+    this.addedCars.push(event);
+    this.onToggle();
+  }
 }

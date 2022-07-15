@@ -1,4 +1,9 @@
 <div class="container">
-    <app-car-list></app-car-list>
+    <button type="button" class="btn btn-success" (click)="onToggle()" *ngIf="!isVisible" >+ New Car</button>
+    <app-car-list *ngIf="!isVisible" [addedCars]="this.addedCars"></app-car-list>
+    <app-car-add-new *ngIf="isVisible" (addCarEvent)="onAddCar($event)"></app-car-add-new>
+    <div class="container">
+        <button type="button" class="btn btn-transparent" id="backbtn" (click)="onToggle()" *ngIf="isVisible" >Back to Cars</button>
+    </div>
 </div>
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { CarModel } from '../car-list/car-list-item/car-item.model';
 import { CarService } from '../car.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { CarService } from '../car.service';
   styleUrls: ['./car-add-new.component.css']
 })
 export class CarAddNewComponent implements OnInit {
+
+  @Output() addCarEvent = new EventEmitter<CarModel>();
 
   carName: string = "";
   carId: string = "";
@@ -27,8 +30,7 @@ export class CarAddNewComponent implements OnInit {
 
   onSubmit(){
     let newCar = {name: this.newCarForm.value.carName, id: new Date().getDay()}
-    this.carService.addNewCar(newCar);
-    
+    this.addCarEvent.emit(newCar); 
   }
 
 }

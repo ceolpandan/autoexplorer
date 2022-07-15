@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {MegaMenuItem} from 'primeng/api';
+import { CarModel } from './cars/car-list/car-list-item/car-item.model';
+import { CarService } from './cars/car.service';
 
 
 @Component({
@@ -7,9 +10,13 @@ import {MegaMenuItem} from 'primeng/api';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
+
+  fetchedCars: CarModel[];
 
   items: MegaMenuItem[];
+
+  constructor(private route: ActivatedRoute){}
 
     ngOnInit() {
         this.items = [
@@ -24,6 +31,10 @@ export class AppComponent {
               icon: 'pi pi-fw pi-phone', 
               routerLink: ['/contact'], 
               // queryParams: {'recent': 'true'}
-            }]
+      }
+    ]
+    }
+    onAddCar(event){
+      console.log(event);
     }
 }

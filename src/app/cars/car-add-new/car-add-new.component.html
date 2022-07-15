@@ -1,18 +1,29 @@
-<form [formGroup]="newCarForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="carname"> Car brand name</label>
-        <input type="text" name="carname" class="form-control" formControlName="carName" [(ngModel)]="carName"> 
-    </div>
-    <div class="radios">
-        <p class="bold">Select engine:</p>
-        <div class="radio" *ngFor="let eng of engines">
-            <label>
-                <input 
-                type="radio"
-                formControlName="engine"
-                [value]="eng">{{eng}}
-            </label>
+<form [formGroup]="newCarForm">
+    <div class="container">
+        <div class="form-group">
+            <label for="carname"> Car brand name</label>
+            <div class="row">
+                <input type="text" name="carname" class="form-control" formControlName="carName" [(ngModel)]="carName"> 
+                <button type="button" [disabled]="carName.length===0" class="btn btn-success" (click)="onSubmit()">Add</button>
+            </div>
         </div>
-    </div> 
-    <button type="submit" [disabled]="carName.length===0" class="btn btn-primary">Add</button>
+        <div class="container">
+            <div class="radios col-md-1">
+                <p class="bold">Select engine:</p>
+                <div class="radio" *ngFor="let eng of engines">
+                    <label>
+                        <input 
+                        type="radio"
+                        formControlName="engine"
+                        [value]="eng">{{eng}}
+                    </label>
+                </div>
+            </div> 
+            <div class="col-md-1">
+                
+
+            </div>
+        </div>
+        
+    </div>
 </form>

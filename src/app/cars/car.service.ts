@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class CarService {
 
-  @Output() addCarEvent = new EventEmitter<CarModel>();
 
   carsURL ='https://parallelum.com.br/fipe/api/v1/carros/marcas'
 
@@ -17,11 +16,5 @@ export class CarService {
   getCars(){
     let data = this.http.get<CarModel[]>(this.carsURL);
     return data;
-  }
-
-  addNewCar(event){
-    this.addCarEvent.emit(event);
-    console.log(event);
-    this.router.navigate(['cars']);
   }
 }
