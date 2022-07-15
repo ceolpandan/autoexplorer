@@ -1,0 +1,18 @@
+<form [formGroup]="newCarForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="carname"> Car brand name</label>
+        <input type="text" name="carname" class="form-control" formControlName="carName" [(ngModel)]="carName"> 
+    </div>
+    <div class="radios">
+        <p class="bold">Select engine:</p>
+        <div class="radio" *ngFor="let eng of engines">
+            <label>
+                <input 
+                type="radio"
+                formControlName="engine"
+                [value]="eng">{{eng}}
+            </label>
+        </div>
+    </div> 
+    <button type="submit" [disabled]="carName.length===0" class="btn btn-primary">Add</button>
+</form>

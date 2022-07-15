@@ -1,0 +1,13 @@
+a{
+    display: block;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(114, 114, 114);
+    text-decoration: none;
+    font-size: xx-large;
+}
+
+#side-nav{
+    margin-bottom: 30px;
+}
