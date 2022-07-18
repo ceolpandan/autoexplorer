@@ -9,3 +9,7 @@ button{
 .bold{
     font-weight: bold;
 }
+
+input{
+    width: 100%;
+}
