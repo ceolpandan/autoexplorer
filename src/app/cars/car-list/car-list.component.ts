@@ -27,16 +27,18 @@ export class CarListComponent implements OnInit {
           let car: CarModel = { id: obj['codigo'], name: obj['nome'] }
           this.cars.push(car)
         }
+
         this.cars.length = this.cars.length / 2 + 2;
+
         if(this.addedCars.length > 0){
           for(let car of this.addedCars){
             this.cars.push(car)
           }
         }
+
         for(let i=0; i<12; i++){
           this.carsForPaginate.push(this.cars[i])
         }
-        
       })
   }
 

@@ -5,7 +5,6 @@
                 <div class="col-sm-6">
                     <label for="carname"> Car brand name</label>
                     <input type="text" name="carname" class="form-control" formControlName="carName" [(ngModel)]="carName"> 
-                    <button type="button" [disabled]="carName.length===0" class="btn btn-success" (click)="onSubmit()">Add</button>
                 </div>
                 <div class="col-sm-6">
                     <p class="bold">Select engine:</p>
@@ -17,7 +16,10 @@
                             [value]="eng">{{eng}}
                         </label>
                 </div>
+
             </div>
+            <button type="button" [disabled]="carName.length===0" class="btn btn-success" (click)="onSubmit()">Add</button>
+
         </div>
         <div class="container">
             <div class="radios col-md-1">

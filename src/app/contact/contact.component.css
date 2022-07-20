@@ -1,0 +1,11 @@
+.container{
+    border: 1px transparent black;
+    height: 400px;
+    width: 60%;
+    margin: auto;
+    background-color: rgb(175, 175, 175);
+}
+
+h3{
+    text-align: center;
+}

@@ -10,7 +10,7 @@ import { CarModel } from './car-item.model';
 })
 export class CarListItemComponent implements OnInit {
 
-  @Input() info: CarModel = {name:"", id: ""};
+  @Input() info: CarModel= {name:" ", id: " "};
 
   constructor(private primengConfig: PrimeNGConfig) { }
 
